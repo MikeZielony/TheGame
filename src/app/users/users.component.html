@@ -1,1 +1,29 @@
 <p>users works!</p>
+
+<div class="container">
+
+  <img  class="first" src="./assets/pictures/red.jpg" width="200" height="240" (click)="this.userService.setActiveUser('red', 1)"  />
+
+  <img  class="second" src="./assets/pictures/blue.jpg" width="200" height="240" (click)="this.userService.setActiveUser('blue',2)" />
+
+</div>
+<h1>Not Active</h1>
+<ng-container *ngFor="let user of users; let i = index">
+  <li *ngIf="!user.active"
+      [class.active]="i == userService.currentIndex"
+      (click)="action(user, i)"
+  > {{ user.name }} {{ user.color}} {{i}}  </li>
+</ng-container>
+
+
+<h1>Active</h1>
+
+  <ng-container *ngFor="let user of users; let i = index">
+    <li *ngIf="user.active"
+        [class.active]="i == userService.currentIndex"
+        (click)="action(user, i)"
+    > {{ user.name }} {{ user.color}} </li>
+</ng-container>
+<br>
+<button (click)="this.userService.deleteAll()">Delete All</button>
+

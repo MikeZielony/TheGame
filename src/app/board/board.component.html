@@ -1,1 +1,17 @@
 <p>board works!</p>
+<button (click)="this.boardService.addPoints()">Roll</button>
+<button (click)="this.boardService.clear()">Clear</button>
+<button (click)="this.boardService.toggleFlag(this.boardService.active)">Toggle</button>
+<button (click)="this.userService.getAll()">Toggle</button>
+
+<p> {{this.boardService.userPoints}}</p>
+<p>{{this.userService.currentUser.name}}   ma {{this.userService.retrieveUsers1()}}</p>
+
+
+
+<div>
+  {{this.boardService.rollValue}}
+</div>
+<div>
+
+</div>
